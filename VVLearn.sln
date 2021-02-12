@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "VlasovLearn", "VlasovLearn\VlasovLearn.pyproj", "{81CCB512-A925-41E1-98A4-401863E04819}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "VV_Learn", "VlasovLearn\VV_Learn.pyproj", "{81CCB512-A925-41E1-98A4-401863E04819}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
