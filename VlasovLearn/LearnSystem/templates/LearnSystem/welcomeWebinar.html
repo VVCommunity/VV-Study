@@ -1,0 +1,16 @@
+﻿{% extends "LearnSystem/layout.html" %}   
+{% block content %}     
+    {% if message %}    
+    <p>{{message}}</p>
+    {% else %}
+    <h5>Запись на вебинар по:   {{webinar.title}}</h5>
+    <form class="form-inline" method="post" action="{% url 'web' webinar.id_webinar %}">
+         {% csrf_token %}
+      <label for="email" class="mr-sm-2">Email address:</label>
+      <input type="email" class="form-control mb-2 mr-sm-2" placeholder="Enter email" id="email" name="email">
+      <label for="pwd" class="mr-sm-2">Имя:</label>
+      <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Enter name" id="name"> 
+      <button type="submit" class="btn btn-primary mb-2">Получить ссылку</button>
+    </form>  
+    {% endif %}
+{% endblock %} 

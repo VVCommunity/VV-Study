@@ -1,0 +1,81 @@
+﻿{% extends "LearnSystem/layout.html" %}
+ <!DOCTYPE HTML>
+{% block content %} 
+    <div class="album py-5 bg-light">
+        <div class="mb-3 p-2 pl-5 pr-5">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Баланс:  {{user.profile.balance}}₽</span> 
+          </h4> 
+        <hr />
+        {% if isPay == False %}
+        <form class="needs-validation" method="post" action="{% url 'pay' %}">
+                {% csrf_token %}
+            <div class="row p-3"> 
+                <input type="text" class="form-control " id="sum" name="sum" placeholder="Сумма" value="" required="">
+                  
+             <button class="btn btn-secondary" type="submit">Пополнить баланс</button>
+          
+              </div> 
+          </form> 
+        {% else %} 
+             <a class="btn btn-primary" onclick="return pay();" >Оплатить обучение</a>
+        {% endif %}
+
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">История операций</span> 
+          </h4>
+          <ul class="list-group mb-3">
+              
+     {% for oper in data %} 
+            <li class="list-group-item d-flex justify-content-between lh-condensed">
+                 {% if oper.is_rashod %}
+              <div>
+                    <h6 class="my-0">Расход</h6>
+                <small class="text-muted">{{oper.data}}</small>
+              </div>
+              <span class="text-muted">-{{oper.price}} ₽</span>
+                {% else %} 
+              <div>
+                    <h6 class="my-0">Пополнение</h6>
+                <small class="text-muted">{{oper.data}}</small>
+              </div>
+              <span class="text-muted">+{{oper.price}} ₽</span>
+                {% endif %}
+            </li> 
+              {% endfor %}
+          </ul>
+
+          <form class="card p-2">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Промо код">
+              <div class="input-group-append">
+                <button type="submit" class="btn btn-secondary">Активировать</button>
+              </div>
+            </div>
+          </form></div>
+        </div>
+ <script src="https://widget.unitpay.money/unitpay.js"></script>
+<script type="text/javascript">
+    this.pay = function() {
+        var payment = new UnitPay();
+        payment.createWidget({
+            publicKey: "249831-a2447",
+            sum: {{sum}},
+            account: "{{user}}",
+            currency: "RUB",
+            domainName: "unitpay.money",
+            signature: "{{hesh}}",
+            desc: "pay",
+            locale: "ru",
+        });
+        payment.success(function (params) {
+            console.log('Успешный платеж');
+        });
+        payment.error(function (message, params) {
+            console.log(message);
+        });
+        return false;
+    };
+</script>
+  
+{% endblock %}

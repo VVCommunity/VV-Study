@@ -1,0 +1,106 @@
+﻿{% extends "LearnSystem/layout.html" %}
+ 
+{% block content %}
+  
+<body >
+      <div class="album py-5 bg-light">
+        <div class="container container-vx">
+    <div class="col-md-8 order-md-1">
+      <h4 class="mb-3">Регистрация</h4> 
+      <form class="needs-validation" novalidate="" method="post" action="{% url 'auth' %}">
+            {% csrf_token %} 
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="id_firstName">Имя</label>
+            <input type="text" class="form-control" name="firstName" id="id_firstName" placeholder="" required="">
+            <div class="invalid-feedback">
+                Требуется правильное имя.
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="id_lastName">Фамилия</label>
+            <input type="text" class="form-control" name="lastName" id="id_lastName" placeholder="" required="">
+            <div class="invalid-feedback">
+                Требуется действительная фамилия.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <label for="id_username">Username</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">@</span>
+            </div>
+            <input type="text" class="form-control" id="id_username" name="username" placeholder="Username" required="">
+            <div class="invalid-feedback" style="width: 100%;">
+                 Ваше имя пользователя обязательно.
+            </div>
+          </div>
+            
+            <p><font size="3" color="red" face="Arial">{{error.username}}</font></p> 
+        </div>
+        <div class="mb-3">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
+          <div class="invalid-feedback">
+            Please enter a valid email address for shipping updates.
+          </div>
+        </div>
+       
+
+        <div class="mb-3">
+          <label for="id_password1">Пароль</label>
+          <input type="password" class="form-control" id="id_password1" name="password1" placeholder="" required="">
+          <div class="invalid-feedback">
+              Пожалуйста, введите пароль.
+          </div>
+            <br><span class="helptext"><ul><li>Ваш пароль не должен совпадать с вашим именем или другой персональной информацией или быть слишком похожим на неё.</li><li>Ваш пароль должен содержать как минимум 8 символов.</li><li>Ваш пароль не может быть одним из широко распространённых паролей.</li><li>Ваш пароль не может состоять только из цифр.</li></ul></span>
+        </div>
+          
+        <p><font size="3" color="red" face="Arial">{{error.password1}}</font></p> 
+        <div class="mb-3">
+          <label for="id_password2">Подтверждение пароля<span class="text-muted">(Optional)</span></label>
+          <input type="password" class="form-control" id="id_password2" name="password2" placeholder="" required="">
+        </div> 
+        <p><font size="3" color="red" face="Arial">{{error.password2}}</font></p> 
+        <div class="row"> 
+          <div class="col-md-4 mb-3">
+            <label for="id_activity">Активность</label>
+            <select class="custom-select d-block w-100" id="id_activity" name="activity" required="">
+              <option value="">...</option>
+              <option value="minimal">Минимальная активность</option>
+              <option value="low">Cлабый уровень активности</option>
+              <option value="mid">Умеренный уровень активности</option>
+              <option value="high">Тяжелая или трудоемкая активность</option>
+              <option value="very_high">Экстремальный уровень</option>
+            </select> 
+          </div> 
+          <div class="col-md-3 mb-3">
+            <label for="id_age">Возраст</label>
+            <input type="number" class="form-control" id="id_age" name="age" placeholder="Укажите ваш возраст" required="">
+            <div class="invalid-feedback">
+               Укажите ваш возраст
+            </div> 
+             </div>   
+             </div>   
+        <hr class="mb-4">  
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Зарегестрироваться</button>
+      </form>
+    </div>
+    </div>
+    <!--
+     <form class="needs-validation" novalidate="" method="post" action="/new-user">
+ 
+          <label for="id_username">Имя пользователя:</label>
+         <input type="text" name="username" maxlength="150" autofocus="" required="" id="id_username"><br><span class="helptext">Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./+/-/_.</span>
+          <label for="id_password1">Пароль:</label><input type="password" name="password1" required="" id="id_password1"><br><span class="helptext"><ul>
+          <li>Ваш пароль не должен совпадать с вашим именем или другой персональной информацией или быть слишком похожим на неё.</li><li>Ваш пароль должен содержать как минимум 8 символов.</li><li>Ваш пароль не может быть одним из широко распространённых паролей.</li><li>Ваш пароль не может состоять только из цифр.</li></ul></span>
+          <label for="id_password2">Подтверждение пароля:</label><input type="password" name="password2" required="" id="id_password2"><br><span class="helptext">Для подтверждения введите, пожалуйста, пароль ещё раз.</span>
+            <hr class="mb-4">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Зарегестрироваться</button>
+      </form> -->
+        </div>
+</body> 
+
+{% endblock %}

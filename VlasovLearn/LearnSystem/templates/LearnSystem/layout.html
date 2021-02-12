@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="yandex-verification" content="5267529cb99abe5e" />
+    <title>VV Learn system</title>  
+    {% load static %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'LearnSystem/content/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'LearnSystem/content/site.css' %}" /> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="{% static 'LearnSystem/scripts/modernizr-2.6.2.js' %}"></script>  
+    <script src="{% static 'LearnSystem/scripts/jquery-1.10.2.min.js' %}"></script>  
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="{% static 'LearnSystem/scripts/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'LearnSystem/scripts/bootstrap.js' %}"></script>
+    <script src="{% static 'LearnSystem/scripts/respond.js' %}"></script> 
+ </head> 
+<body><div id="id01" class="modal">
+
+  <form  class="modal-content mf-4 animate" method="post" action="{% url 'login' %}">
+        <span onclick="document.getElementById('id01').style.display='none'"
+class="close" >&times;</span>
+      {% csrf_token %}  
+    <h1 class="h3 mb-3 font-weight-normal text-center">Авторизация</h1>    <hr/> 
+    <div class="row login-row">  
+      <div class="login-col col">
+        <a target="_blank"  href="/login/vk-oauth2" class="vk login-btn btn">
+          <i class="fa fa-facebook fa-fw"></i> Войти через VK
+        </a>
+        <a href="#" class="twitter login-btn btn">
+          <i class="fa fa-twitter fa-fw"></i>  Войти через Twitter
+        </a>
+        <a href="{% url 'social:begin' 'google-oauth2' %}" class="google login-btn btn">
+          <i class="fa fa-google fa-fw"></i>  Войти через Google+
+        </a>
+      </div>
+      <div class="vline"></div> 
+      <div class="login-col col">
+        <div class="hide-md-lg">
+          <p>Или</p>
+        </div> 
+        <input type="text" name="username" placeholder="Логин" required>
+        <input type="password" name="password" placeholder="Пароль" required>
+        <input type="submit" value="Войти">  
+         <a href="#" >   Забыл пароль?
+        </a>
+          <br />
+         <a href="{% url 'auth' %}"  >
+            Создать аккаунт
+        </a>
+        <p><font size="3" color="red" face="Arial"></font></p> 
+      </div>  
+    </div> 
+  </form>  
+    </div> 
+        <div class="preloader">
+	        <div class="preloader__image"></div>
+        </div>
+    {% load google_analytics_tags %}
+<div style="display:none">
+    <img src="{% google_analytics %}" width="0" height="0" />
+</div>
+         <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm fixed-top">
+              <h5 class="my-0 mr-md-auto font-weight-normal">VV Learn system</h5>
+              <nav class="my-2 my-md-0 mr-md-3">
+                <a class="p-2 text-dark" href="{% url 'home' %}">Главная</a> 
+                <a class="p-2 text-dark" href="#">Курсы</a>
+                <a class="p-2 text-dark" href="{% url 'blog' %}">Блог</a>
+              </nav> 
+             
+          {% if user.is_authenticated %} 
+             
+             <div class="dropdown ">
+            <a class="btn-login-def dropdown-toggle"  href="#" data-toggle="dropdown"><img class="rounded" src="{{user.profile.cover.url}}" width="32" height="32"></a> 
+               <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="{% url 'profile' %}">Профиль</a> 
+                <a class="dropdown-item" href="{% url 'webinars' %}">Вебинары</a>
+               <!--<a class="dropdown-item" href="{//% url 'balance' %}">Баланс: {user.profile.balance}}?</a> -->  
+              {% if user.is_superuser %} 
+                <a class="dropdown-item" href="/admin">Админка</a> 
+                   {% endif %} 
+                <a class="dropdown-item" href="{% url 'logout' %}">Выход</a> 
+              </div>
+          
+                 </div> 
+              
+      {% endif %} 
+         </div>  
+        <div class="menufixed">{% block content %}{% endblock %} 
+     
+         <script>
+             
+// Get the modal
+var modal = document.getElementById('id01'); 
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+    window.onload = function () {
+      document.body.classList.add('loaded_hiding');
+      window.setTimeout(function () {
+        document.body.classList.add('loaded');
+        document.body.classList.remove('loaded_hiding');
+      }, 500);
+    }
+  </script></div>
+    </body> 
+</html>

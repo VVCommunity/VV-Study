@@ -1,0 +1,61 @@
+﻿{% extends "LearnSystem/layout.html" %}
+ <!DOCTYPE HTML>
+{% block content %} 
+<body>
+      <div class="album py-5 bg-light">
+        <div class="container">
+        <h3 class="">Личный кабинет</h3>
+        <hr />
+            <img class="" src="{{user.profile.cover.url}}" width="128" height="128">
+             <a href="#">Изменить фотографию</a>
+        <h5 class="my-5">Ваши данные:</h5>
+        <form class="needs-validation" novalidate="" method="post" action="/update_user">
+            {% csrf_token %}
+            <div class="form-row field-cover"> 
+                <div> 
+                        <label class="required" for="id_cover">Cover:</label>  
+Change:
+<input type="file" name="cover" accept="image/*" id="id_cover"></p> 
+                </div> 
+        </div>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="id_firstName">Имя</label>
+                    <h5 class="card-text" id="id_firstName">{{user.first_name}}</h5>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="id_firstName">Фамилия</label>
+                    <h5 class="card-text">{{user.last_name}}</h5>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="id_username">Username</label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">@</span>
+                    </div>
+                    <input type="text" class="form-control" id="id_username" name="username" placeholder={{user.username}} required="" readonly>
+                    <div class="invalid-feedback" style="width: 100%;">
+                        Ваше имя пользователя обязательно.
+                    </div>
+                </div>
+            </div>
+            <div class="row"
+            </div>
+            <hr class="mb-4">
+            <p>
+              <!--  <button class="btn btn-primary  my-2" type="submit">Сохранить</button> -->
+                <a class="btn btn-primary  my-2" href="{% url 'balance' %}" >Пополнить баланс</a>
+                {%if user.is_superuser%}
+                <a href="/admin" class="btn btn-primary my-2">Админ панель</a>
+                {%endif%}
+            </p>
+
+        </form>
+
+         
+    </div>
+    </div>
+</body> 
+
+{% endblock %}

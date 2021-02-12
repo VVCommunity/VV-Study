@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{user.username}}</title>  
+    {% load static %}
+    <link rel="shortcut icon"  href="{{user.profile.cover.url}}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'LearnSystem/content/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'LearnSystem/content/site.css' %}" /> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="{% static 'LearnSystem/scripts/modernizr-2.6.2.js' %}"></script>  
+    <script src="{% static 'LearnSystem/scripts/jquery-1.10.2.min.js' %}"></script>  
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="{% static 'LearnSystem/scripts/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'LearnSystem/scripts/bootstrap.js' %}"></script>
+    <script src="{% static 'LearnSystem/scripts/respond.js' %}"></script> 
+ </head> 
+<body> 
+    <div class="container center-text">
+         
+     <img src="{{user.profile.cover.url}}" class="rounded-circle m-3" width='15%' height='15%' />
+     <h6>{{user.username}}</h6>
+        <h6 class="text-muted">{{user.taplink.description}}</h6> 
+        {% if buttons %}  
+          {% for item in buttons %}     
+             <a class="btn btn-dark btn-block btn-" href="{{item.url}}">{{item.title}}</a>
+            {% endfor %} 
+            {% if user.is_superuser %} 
+                <a class="btn btn-dark btn-block btn-lg"  href="/admin">Админка</a>   
+             {% endif %}
+    {% endif %} 
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">.</span>
+      </div>
+    </footer>
+    </div>
+</body>
+</html>

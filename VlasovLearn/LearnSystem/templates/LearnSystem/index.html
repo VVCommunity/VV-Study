@@ -1,0 +1,65 @@
+﻿{% extends "LearnSystem/layout.html" %}   
+{% block content %} 
+<div class="row">
+    <div class="col-sm-2">
+        <ul class="nav nav-pills flex-column">
+            {% if user.is_authenticated %} 
+            <li class="nav-item">
+                <h6 class="nav-link disabled" href="#">Ваши курсы</h6>
+                <hr />
+            </li> 
+            {% for data in listcources %}  
+            {% for cource in data.cources %}
+            <li class="nav-item">
+                <h6 class="nav-link disabled" href="#">{{cource.name}}</h6>
+            </li> 
+            {% for moduleData in data.modulesList %} 
+            <li class="nav-item">
+                <button class="btn" data-toggle="collapse" data-target="#cource{{moduleData.module.id}}">{{moduleData.module.name}}</button>
+                <div id="cource{{moduleData.module.id}}" class="collapse">
+                    {% for themeData in moduleData.themes %} 
+                        <a class="dropdown-item" href="{% url 'theme' themeData.id%}">{{themeData.name}}</a> 
+                        
+                     {% endfor %} 
+                </div>  
+            </li> 
+             {% endfor %} 
+             
+            {% endfor %} 
+            {% endfor %} 
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Список курсов</a>
+            </li>
+            <li class="nav-item">
+             <a class="btn btn-outline-primary" onclick="document.getElementById('id01').style.display='block'">Войти</a>  
+            </li>
+            {% endif %}
+        </ul>
+      <hr class="d-sm-none">
+    </div>
+
+    {% if themeData %} 
+    <div class="col-sm-9">
+      {% for item in themeData.listData %}   
+        {% if item.base %} 
+          <h3>{{item.base.title}}</h3>
+            <hr />
+          <p>{{item.base.description |safe }}</p>
+        {% endif %}   
+        {% if item.body %} 
+          <p>{{item.body.body |safe}}</p> 
+        {% endif %}   
+        {% if item.image %} 
+            <div class="fakeimg"><img class="rounded img-fluid" src="{{item.image.image.url}}" width="20%" height="30% "></div> 
+        {% endif %}
+        {% if item.video %} 
+              <video class="rounded img-fluid" name='demo' controls controlsList="nodownload" width='80%' height='80%'>
+            <source src="{{item.video.video.url}}" type="video/mp4"></source>
+            </video>     
+        {% endif %} 
+    {% endfor %} 
+    {% endif %}
+          </div>
+          </div>
+ {% endblock %} 

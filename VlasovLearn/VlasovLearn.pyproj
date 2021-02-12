@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>VlasovLearn</Name>
+    <RootNamespace>VlasovLearn</RootNamespace>
+    <InterpreterId>Global|VisualStudio|Django</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
+    <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>81ccb512-a925-41e1-98a4-401863e04819</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>VlasovLearn.settings</DjangoSettingsModule>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Accaunt\admin.py" />
+    <Compile Include="Accaunt\apps.py" />
+    <Compile Include="Accaunt\migrations\0001_initial.py" />
+    <Compile Include="Accaunt\migrations\0002_profile_cover.py" />
+    <Compile Include="Accaunt\migrations\0003_auto_20200208_1829.py" />
+    <Compile Include="Accaunt\migrations\0004_profile_iscommunity.py" />
+    <Compile Include="Accaunt\migrations\0005_shopitem.py" />
+    <Compile Include="Accaunt\migrations\0006_unitypay.py" />
+    <Compile Include="Accaunt\migrations\0007_auto_20200418_1414.py" />
+    <Compile Include="Accaunt\migrations\0008_purchase.py" />
+    <Compile Include="Accaunt\migrations\0009_auto_20200418_1630.py" />
+    <Compile Include="Accaunt\migrations\0010_auto_20200419_2011.py" />
+    <Compile Include="Accaunt\migrations\0011_moneyoper.py" />
+    <Compile Include="Accaunt\migrations\__init__.py" />
+    <Compile Include="Accaunt\models.py" />
+    <Compile Include="Accaunt\tests.py" />
+    <Compile Include="Accaunt\urls.py" />
+    <Compile Include="Accaunt\views.py" />
+    <Compile Include="Accaunt\__init__.py" />
+    <Compile Include="app\forms.py" />
+    <Compile Include="app\models.py" />
+    <Compile Include="app\tests.py" />
+    <Compile Include="app\views.py" />
+    <Compile Include="app\__init__.py" />
+    <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="BlogSystem\admin.py" />
+    <Compile Include="BlogSystem\apps.py" />
+    <Compile Include="BlogSystem\migrations\__init__.py" />
+    <Compile Include="BlogSystem\models.py" />
+    <Compile Include="BlogSystem\tests.py" />
+    <Compile Include="BlogSystem\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BlogSystem\views.py" />
+    <Compile Include="BlogSystem\__init__.py" />
+    <Compile Include="LearnSystem\admin.py" />
+    <Compile Include="LearnSystem\apps.py" />
+    <Compile Include="LearnSystem\consumers.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LearnSystem\migrations\__init__.py" />
+    <Compile Include="LearnSystem\models.py" />
+    <Compile Include="LearnSystem\routing.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LearnSystem\tests.py" />
+    <Compile Include="LearnSystem\urls.py" />
+    <Compile Include="LearnSystem\views.py" />
+    <Compile Include="LearnSystem\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="TapLinkByVlasov\admin.py" />
+    <Compile Include="TapLinkByVlasov\apps.py" />
+    <Compile Include="TapLinkByVlasov\migrations\__init__.py" />
+    <Compile Include="TapLinkByVlasov\models.py" />
+    <Compile Include="TapLinkByVlasov\tests.py" />
+    <Compile Include="TapLinkByVlasov\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TapLinkByVlasov\views.py" />
+    <Compile Include="TapLinkByVlasov\__init__.py" />
+    <Compile Include="VlasovLearn\asgi.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VlasovLearn\__init__.py" />
+    <Compile Include="VlasovLearn\settings.py" />
+    <Compile Include="VlasovLearn\urls.py" />
+    <Compile Include="VlasovLearn\wsgi.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Accaunt\" />
+    <Folder Include="Accaunt\migrations\" />
+    <Folder Include="Accaunt\migrations\__pycache__\" />
+    <Folder Include="Accaunt\templates\" />
+    <Folder Include="Accaunt\templates\Accaunt\" />
+    <Folder Include="Accaunt\__pycache__\" />
+    <Folder Include="app\" />
+    <Folder Include="app\migrations\" />
+    <Folder Include="app\static\" />
+    <Folder Include="app\static\app\" />
+    <Folder Include="app\static\app\content\" />
+    <Folder Include="app\static\app\fonts\" />
+    <Folder Include="app\static\app\scripts\" />
+    <Folder Include="app\templates\" />
+    <Folder Include="app\templates\app\" />
+    <Folder Include="BlogSystem\" />
+    <Folder Include="BlogSystem\migrations\" />
+    <Folder Include="BlogSystem\templates\" />
+    <Folder Include="BlogSystem\templates\BlogSystem\" />
+    <Folder Include="LearnSystem\" />
+    <Folder Include="LearnSystem\migrations\" />
+    <Folder Include="LearnSystem\static\" />
+    <Folder Include="LearnSystem\static\LearnSystem\" />
+    <Folder Include="LearnSystem\static\LearnSystem\content\" />
+    <Folder Include="LearnSystem\static\LearnSystem\file\" />
+    <Folder Include="LearnSystem\static\LearnSystem\fonts\" />
+    <Folder Include="LearnSystem\static\LearnSystem\images\" />
+    <Folder Include="LearnSystem\static\LearnSystem\scripts\" />
+    <Folder Include="LearnSystem\templates\" />
+    <Folder Include="LearnSystem\templates\LearnSystem\" />
+    <Folder Include="TapLinkByVlasov\" />
+    <Folder Include="TapLinkByVlasov\migrations\" />
+    <Folder Include="TapLinkByVlasov\templates\" />
+    <Folder Include="TapLinkByVlasov\templates\TapLinkByVlasov\" />
+    <Folder Include="VlasovLearn\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Accaunt\migrations\__pycache__\0001_initial.cpython-37.pyc" />
+    <Content Include="Accaunt\migrations\__pycache__\0002_profile_cover.cpython-37.pyc" />
+    <Content Include="Accaunt\migrations\__pycache__\0003_auto_20200208_1829.cpython-37.pyc" />
+    <Content Include="Accaunt\migrations\__pycache__\0004_profile_iscommunity.cpython-37.pyc" />
+    <Content Include="Accaunt\migrations\__pycache__\0005_shopitem.cpython-37.pyc" />
+    <Content Include="Accaunt\migrations\__pycache__\0006_unitypay.cpython-37.pyc" />
+    <Content Include="Accaunt\migrations\__pycache__\0007_auto_20200418_1414.cpython-37.pyc" />
+    <Content Include="Accaunt\migrations\__pycache__\0008_purchase.cpython-37.pyc" />
+    <Content Include="Accaunt\migrations\__pycache__\0009_auto_20200418_1630.cpython-37.pyc" />
+    <Content Include="Accaunt\migrations\__pycache__\0010_auto_20200419_2011.cpython-37.pyc" />
+    <Content Include="Accaunt\migrations\__pycache__\0011_moneyoper.cpython-37.pyc" />
+    <Content Include="Accaunt\migrations\__pycache__\__init__.cpython-37.pyc" />
+    <Content Include="Accaunt\templates\Accaunt\balance.html" />
+    <Content Include="Accaunt\templates\Accaunt\cources.html" />
+    <Content Include="Accaunt\templates\Accaunt\failbuy.html" />
+    <Content Include="Accaunt\templates\Accaunt\index.html" />
+    <Content Include="Accaunt\templates\Accaunt\login.html" />
+    <Content Include="Accaunt\templates\Accaunt\profile.html" />
+    <Content Include="Accaunt\templates\Accaunt\restPasswordDone.html" />
+    <Content Include="Accaunt\templates\Accaunt\restPassword.html" />
+    <Content Include="Accaunt\templates\Accaunt\registration.html" />
+    <Content Include="Accaunt\templates\Accaunt\error.html" />
+    <Content Include="Accaunt\templates\Accaunt\success.html" />
+    <Content Include="Accaunt\__pycache__\admin.cpython-37.pyc" />
+    <Content Include="Accaunt\__pycache__\models.cpython-37.pyc" />
+    <Content Include="Accaunt\__pycache__\urls.cpython-37.pyc" />
+    <Content Include="Accaunt\__pycache__\views.cpython-37.pyc" />
+    <Content Include="Accaunt\__pycache__\__init__.cpython-37.pyc" />
+    <Content Include="BlogSystem\templates\BlogSystem\index.html" />
+    <Content Include="LearnSystem\static\favicon.png" />
+    <Content Include="LearnSystem\static\favicon2.ico" />
+    <Content Include="LearnSystem\static\favicon_64.png" />
+    <Content Include="LearnSystem\static\icon.ico" />
+    <Content Include="LearnSystem\static\icon_2.png" />
+    <Content Include="LearnSystem\static\icon_3.png" />
+    <Content Include="LearnSystem\static\icon_4.png" />
+    <Content Include="LearnSystem\static\LearnSystem\content\bootstrap.css" />
+    <Content Include="LearnSystem\static\LearnSystem\content\bootstrap.min.css" />
+    <Content Include="LearnSystem\static\LearnSystem\content\SchoolDev - Ярлык.lnk" />
+    <Content Include="LearnSystem\static\LearnSystem\content\site.css" />
+    <Content Include="LearnSystem\static\LearnSystem\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="LearnSystem\static\LearnSystem\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="LearnSystem\static\LearnSystem\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="LearnSystem\static\LearnSystem\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="LearnSystem\static\LearnSystem\images\background.jpg" />
+    <Content Include="LearnSystem\static\LearnSystem\images\background2.jpg" />
+    <Content Include="LearnSystem\static\LearnSystem\images\background_0.jpg" />
+    <Content Include="LearnSystem\static\LearnSystem\images\fon1.jpg" />
+    <Content Include="LearnSystem\static\LearnSystem\images\fon2.jpg" />
+    <Content Include="LearnSystem\static\LearnSystem\images\fon3.jpg" />
+    <Content Include="LearnSystem\static\LearnSystem\images\fon4.jpg" />
+    <Content Include="LearnSystem\static\LearnSystem\images\fon5.jpg" />
+    <Content Include="LearnSystem\static\LearnSystem\images\fon6.jpg" />
+    <Content Include="LearnSystem\static\LearnSystem\images\icon.ico" />
+    <Content Include="LearnSystem\static\LearnSystem\images\icon_0.png" />
+    <Content Include="LearnSystem\static\LearnSystem\images\image_0.png" />
+    <Content Include="LearnSystem\static\LearnSystem\images\image_1.png" />
+    <Content Include="LearnSystem\static\LearnSystem\images\image_2.png" />
+    <Content Include="LearnSystem\static\LearnSystem\images\image_3.png" />
+    <Content Include="LearnSystem\static\LearnSystem\images\image_4.png" />
+    <Content Include="LearnSystem\static\LearnSystem\images\image_5.png" />
+    <Content Include="LearnSystem\static\LearnSystem\images\image_6.png" />
+    <Content Include="LearnSystem\templates\LearnSystem\EmailMSGWebinar.html" />
+    <Content Include="libman.json" />
+    <Content Include="TapLinkByVlasov\templates\TapLinkByVlasov\index.html" />
+    <None Include="LearnSystem\static\LearnSystem\scripts\_references.js" />
+    <Content Include="LearnSystem\static\LearnSystem\scripts\bootstrap.js" />
+    <Content Include="LearnSystem\static\LearnSystem\scripts\bootstrap.min.js" />
+    <None Include="LearnSystem\static\LearnSystem\scripts\jquery.validate-vsdoc.js" />
+    <None Include="LearnSystem\static\LearnSystem\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="LearnSystem\static\LearnSystem\scripts\chat.js" />
+    <Content Include="LearnSystem\static\LearnSystem\scripts\jquery-1.10.2.js" />
+    <Content Include="LearnSystem\static\LearnSystem\scripts\jquery-1.10.2.min.js" />
+    <Content Include="LearnSystem\static\LearnSystem\scripts\jquery-1.10.2.min.map" />
+    <Content Include="LearnSystem\static\LearnSystem\scripts\jquery.validate.js" />
+    <Content Include="LearnSystem\static\LearnSystem\scripts\jquery.validate.min.js" />
+    <Content Include="LearnSystem\static\LearnSystem\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="LearnSystem\static\LearnSystem\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="LearnSystem\static\LearnSystem\scripts\modernizr-2.6.2.js" />
+    <Content Include="LearnSystem\static\LearnSystem\scripts\respond.js" />
+    <Content Include="LearnSystem\static\LearnSystem\scripts\respond.min.js" />
+    <Content Include="LearnSystem\templates\LearnSystem\chat.html" />
+    <Content Include="LearnSystem\templates\LearnSystem\index.html" />
+    <Content Include="LearnSystem\templates\LearnSystem\layout.html" />
+    <Content Include="LearnSystem\templates\LearnSystem\loginView.html" />
+    <Content Include="LearnSystem\templates\LearnSystem\courceStats.html" />
+    <Content Include="LearnSystem\templates\LearnSystem\webinars.html" />
+    <Content Include="LearnSystem\templates\LearnSystem\webinar.html" />
+    <Content Include="LearnSystem\templates\LearnSystem\welcomeWebinar.html" />
+    <Content Include="requirements.txt" />
+    <Content Include="db.sqlite3" />
+    <Content Include="app\static\app\content\bootstrap.css" />
+    <Content Include="app\static\app\content\bootstrap.min.css" />
+    <Content Include="app\static\app\content\site.css" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="app\static\app\scripts\bootstrap.js" />
+    <Content Include="app\static\app\scripts\bootstrap.min.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.min.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.min.map" />
+    <Content Include="app\static\app\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.min.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="app\static\app\scripts\modernizr-2.6.2.js" />
+    <Content Include="app\static\app\scripts\respond.js" />
+    <Content Include="app\static\app\scripts\respond.min.js" />
+    <Content Include="app\static\app\scripts\_references.js" />
+    <Content Include="app\templates\app\about.html" />
+    <Content Include="app\templates\app\contact.html" />
+    <Content Include="app\templates\app\index.html" />
+    <Content Include="app\templates\app\layout.html" />
+    <Content Include="app\templates\app\login.html" />
+    <Content Include="app\templates\app\loginpartial.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.html">
+      <SubType>WebBrowser</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|VisualStudio|Django" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
