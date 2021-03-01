@@ -91,6 +91,13 @@ class CourceInstance(models.Model):
     
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    Name  = models.CharField(
+        max_length=100, 
+        default = 'Курс',
+        verbose_name='Описание'
+    )
+    image = models.ImageField(upload_to='images/', default='/images/themes/theme_1.png')
+  
     cource_id =  models.PositiveIntegerField(
         default=0,
         verbose_name='Номер курса'
