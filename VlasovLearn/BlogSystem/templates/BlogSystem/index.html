@@ -1,27 +1,50 @@
 ﻿{% extends "LearnSystem/layout.html" %}
-{% block content %}
+{% block content %} 
 {% if posts %}
-<div class="album py-5 bg-light">
-    <div class="container"> 
-        <h5>Блог разработчика игр</h5><hr />
-      <div class="row"> 
+<section class="blog_area section-padding">
+<div class="container">
+    
 {% for post in posts %}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">  
-                <img class="rounded img-fluid" src="{{post.preview.url}}" alt="Alternate Text" />  
-            <div class="card-body">
-              <p class="card-text">{{post.title}}</p>
-                <div class="btn-group">
-                  <a href="{{ticket.webinar.url}}" class="btn btn-sm btn-outline-secondary">View</a> 
-                </div>
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
-          </div>
-        </div> 
-{% endfor %}  
-      </div>
+<div class="row">
+<div class="col-lg-8 mb-5 mb-lg-0">
+<div class="blog_left_sidebar">
+<article class="blog_item">
+    <div class="blog_item_img">
+    <img class="card-img rounded-0" src="{{post.preview.url}}" alt="">
+    <a href="#" class="blog_item_date">
+    <h3>23s</h3>
+    <p>Fed</p>
+    </a>
     </div>
-  </div>
+
+    <div class="blog_details">
+        <a class="d-inline-block" href="single-blog.html">
+        <h2>{{post.title}}</h2>
+        </a>
+         <p>{{ post.description }}</p>
+        <ul class="blog-info-link">
+        <li><a href="{{ticket.webinar.url}}"><i class="fa fa-user"></i> Читать</a></li>
+        <li><a href="#"><i class="fa fa-comments"></i> 0 Comments</a></li>
+        </ul>
+    </div>
+</article>
+</div>
+    </div>
+    </div>
+ {% endfor %}  
+ 
+    </div>
+    </section>
 {% endif %}
+<div>
+    <section>
+        <h2>
+            Microsoft представила первый ориентированный на новичков язык программирования компании — Power Fx
+        </h2>
+        <p>Microsoft представила первый ориентированный на новичков язык программирования компании — Power Fx
+        <br />Microsoft представила первый ориентированный на новичков язык программирования компании — Power Fx</p>
+        <img  class="blog-image-0 "src="{{post.preview.url}} alt="Alternate Text" />
+
+    </section>
+</div>
 {% endblock %} 

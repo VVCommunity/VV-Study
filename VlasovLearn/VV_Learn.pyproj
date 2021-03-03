@@ -169,6 +169,7 @@
     <Content Include="Accaunt\__pycache__\views.cpython-37.pyc" />
     <Content Include="Accaunt\__pycache__\__init__.cpython-37.pyc" />
     <Content Include="BlogSystem\templates\BlogSystem\index.html" />
+    <Content Include="BlogSystem\templates\BlogSystem\WebBlock.html" />
     <Content Include="LearnSystem\static\favicon.png" />
     <Content Include="LearnSystem\static\favicon2.ico" />
     <Content Include="LearnSystem\static\favicon_64.png" />
